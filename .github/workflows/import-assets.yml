@@ -1,0 +1,41 @@
+name: Import verified master assets
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-assets.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download master assets
+        run: |
+          mkdir -p assets
+          base='https://solid-drip-mtc9k36.shipstatic.com/assets'
+          curl -fsSL "$base/drop.webp" -o assets/drop.webp
+          curl -fsSL "$base/closeup.webp" -o assets/closeup.webp
+          curl -fsSL "$base/living.webp" -o assets/living.webp
+          curl -fsSL "$base/product.webp" -o assets/product.webp
+          curl -fsSL "$base/workshop.webp" -o assets/workshop.webp
+      - name: Verify exact bytes
+        run: |
+          echo '771a06d57e976e888a95b040b0059b830bd1b36d2d0ec5d3a56467e8ad8dac36  assets/drop.webp' | sha256sum -c -
+          echo 'e0a78cd8dccf7a4f487ac2cbe1f88351ff372d00d1f4248b11305c8855e72093  assets/closeup.webp' | sha256sum -c -
+          echo 'cf160067e4040648901de29b1c589d5a72880e8ad390ca384629587069d7adbe  assets/living.webp' | sha256sum -c -
+          echo '9bfcca5e289c2447a8c5711f6697a61e603eaaa073c5379f187a41800665aff7  assets/product.webp' | sha256sum -c -
+          echo '89740f4453e4c3e4046395eb23b881d538058f32232b57ce669856add86b73ec  assets/workshop.webp' | sha256sum -c -
+      - name: Commit verified assets
+        run: |
+          git config user.name 'LAGUNA ATELIER Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add assets
+          git diff --cached --quiet && exit 0
+          git commit -m 'Add verified master image assets'
+          git push

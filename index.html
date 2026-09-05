@@ -1,1 +1,110 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LAGUNA ATELIER</title></head><body><p>initializing</p></body></html>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071516">
+<title>LAGUNA ATELIER — Свет, заключённый в форму</title>
+<meta name="description" content="LAGUNA ATELIER — предметы, в которых остаётся свет. Стекло, дерево, отражение и материя.">
+<style>
+:root{--night:#071516;--deep:#0d2929;--deep2:#153937;--sea:#6f9a91;--mist:#dfe7e2;--ivory:#f4f0e8;--sand:#d7c8b6;--brass:#b78b59;--ember:#aa6b49;--ink:#182220;--muted:#66716d;--line:rgba(24,34,32,.14);--serif:Georgia,"Times New Roman",serif;--sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:var(--serif)}
+.nav{position:fixed;left:0;right:0;top:0;z-index:50;padding:18px clamp(18px,5vw,70px);display:flex;align-items:center;justify-content:space-between;color:#f5f1e8;background:linear-gradient(to bottom,rgba(5,18,19,.84),rgba(5,18,19,.25),transparent);backdrop-filter:blur(4px)}
+.brand{font-family:var(--serif);letter-spacing:.12em;font-size:15px;white-space:nowrap}.navlinks{display:flex;gap:24px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;align-items:center}.navlinks a{opacity:.78;transition:.25s}.navlinks a:hover,.navlinks a:focus-visible{opacity:1}.cart{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 13px}.menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.35);color:white;border-radius:999px;padding:9px 13px;min-height:42px}
+.hero{min-height:860px;position:relative;overflow:hidden;color:#f4f0e8;background:radial-gradient(circle at 72% 31%,rgba(111,154,145,.31),transparent 26%),radial-gradient(circle at 18% 90%,rgba(183,139,89,.18),transparent 30%),linear-gradient(135deg,#051112,#0b2525 58%,#153937)}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.02),transparent 34%)}.hero:after{content:"";position:absolute;inset:auto -15% -120px 35%;height:310px;background:radial-gradient(ellipse,rgba(220,239,233,.11),transparent 65%);filter:blur(12px)}
+.hero-inner{max-width:1240px;margin:auto;padding:180px 6vw 110px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;position:relative;z-index:2}.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;opacity:.62}.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,7vw,104px);line-height:.93;letter-spacing:.06em;margin:24px 0 22px}.lead{font-family:var(--serif);font-style:italic;font-size:clamp(25px,2.6vw,39px);color:#ded8cb;max-width:680px}.sub{max-width:580px;color:#ced9d5;margin-top:24px;font-size:15px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 21px;border-radius:999px;border:1px solid transparent;transition:.25s;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn-light{background:var(--ivory);color:var(--deep)}.btn-ghost{border-color:rgba(255,255,255,.42);color:white}.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.drop-wrap{position:relative;min-height:530px;display:flex;align-items:center;justify-content:center;perspective:1000px}.drop-wrap:before{content:"";position:absolute;width:min(360px,80%);height:90px;border-radius:50%;bottom:72px;background:radial-gradient(ellipse,rgba(136,205,192,.24),rgba(183,139,89,.10) 38%,transparent 70%);filter:blur(13px)}.drop{width:min(74%,430px);max-height:520px;object-fit:contain;filter:drop-shadow(0 28px 36px rgba(0,0,0,.35));animation:float 6s ease-in-out infinite;transform-origin:50% 70%}.scroll{position:absolute;bottom:28px;left:6vw;z-index:3;font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.55}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1.5deg)}}
+.section{padding:110px 6vw}.wrap{max-width:1240px;margin:auto}.kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}.title{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5vw,70px);line-height:1.02;margin:18px 0 22px}
+.philosophy{background:radial-gradient(circle at 82% 18%,rgba(111,154,145,.18),transparent 25%),linear-gradient(135deg,#0a1b1b,#102d2c 60%,#163c3a);color:#f4f0e8}.philosophy-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:end}.philosophy .kicker{color:#9fb5af}.philosophy-copy{font-family:var(--serif);font-size:clamp(24px,2.5vw,36px);line-height:1.45;color:#e7e0d3}.philosophy-small{color:#bfcfca;max-width:650px;margin-top:24px}.essence{display:flex;gap:20px;flex-wrap:wrap;margin-top:34px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#a8bbb5}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px}.collection{min-height:430px;border-radius:28px;overflow:hidden;position:relative;background:#ddd;border:1px solid rgba(255,255,255,.06);isolation:isolate}.collection img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:.6s transform}.collection:hover img{transform:scale(1.04)}.collection:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(3,11,11,.80),rgba(3,11,11,.10) 58%,transparent);z-index:1}.collection-body{position:absolute;z-index:2;left:24px;right:24px;bottom:24px;color:white}.collection-body strong{font-family:var(--serif);font-weight:400;font-size:32px}.collection-body span{display:block;font-size:12px;opacity:.73;margin-top:6px}.abstract1{background:radial-gradient(circle at 35% 30%,#cfe4df,transparent 21%),linear-gradient(135deg,#163937,#6f9a91 55%,#d4c6b5)}.abstract2{background:radial-gradient(circle at 70% 30%,rgba(255,255,255,.58),transparent 12%),linear-gradient(135deg,#b9c9c2,#eef1ed 55%,#856f59)}
+.feature{background:#ebe5dc}.product-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center}.product-shot{border-radius:34px;overflow:hidden;min-height:620px;background:#222}.product-shot img{width:100%;height:100%;min-height:620px;object-fit:cover}.price{font-size:20px;margin:22px 0 28px}.meta{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:28px 0}.meta div{border-top:1px solid var(--line);padding-top:12px;font-size:13px;color:#56615d}
+.atelier{background:#172b29;color:#f5f1e9;padding:0}.atelier-grid{display:grid;grid-template-columns:1fr 1fr;min-height:720px}.atelier-image{min-height:720px}.atelier-image img{width:100%;height:100%;object-fit:cover;display:block}.atelier-copy{padding:90px 7vw;display:flex;flex-direction:column;justify-content:center}.atelier-copy .kicker{color:#9cb1ab}.atelier-copy p{color:#c7d3cf;max-width:590px}.atelier-rule{width:54px;height:1px;background:rgba(245,241,233,.35);margin:28px 0}
+.lifestyle{position:relative;min-height:780px;color:white;display:flex;align-items:end;overflow:hidden}.lifestyle img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.lifestyle:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(7,16,15,.84),rgba(7,16,15,.08) 60%)}.lifestyle-copy{position:relative;z-index:2;padding:90px 6vw;max-width:900px}
+.bespoke{background:var(--ivory)}.bespoke-card{border-radius:38px;padding:72px;background:radial-gradient(circle at 86% 18%,rgba(255,255,255,.55),transparent 25%),linear-gradient(135deg,#dce7e1,#f2ede5 52%,#d7c8b6);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.trust div{padding:26px 22px;border-right:1px solid var(--line);font-size:13px}.trust div:last-child{border-right:0}
+footer{background:#071516;color:#dbe2df;padding:70px 6vw 40px}.footer-grid{max-width:1240px;margin:auto;display:grid;grid-template-columns:1.5fr .5fr .5fr;gap:50px}.footer-brand{font-family:var(--serif);letter-spacing:.13em;font-size:22px}.footer-grid p{color:#aebbb7;font-size:13px}.footer-grid b{color:#e4e9e7;font-weight:500}.footer-bottom{max-width:1240px;margin:55px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.11);display:flex;justify-content:space-between;gap:20px;color:#81918c;font-size:11px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .75s ease,transform .75s ease}.reveal.in{opacity:1;transform:none}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,24px);z-index:80;background:#f4f0e8;color:#172321;border:1px solid rgba(0,0,0,.12);border-radius:18px;padding:15px 18px;box-shadow:0 20px 50px rgba(0,0,0,.25);display:flex;gap:10px;opacity:0;pointer-events:none;transition:.25s;max-width:min(92vw,560px);font-size:13px}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.navlinks{display:none;position:absolute;top:64px;left:4vw;right:4vw;background:rgba(7,21,22,.97);padding:20px;border-radius:18px;flex-direction:column;align-items:flex-start;box-shadow:0 24px 60px rgba(0,0,0,.32)}.navlinks.open{display:flex}.menu-btn{display:block}.hero{min-height:auto}.hero-inner{grid-template-columns:1fr;padding-top:130px;padding-bottom:85px}.drop-wrap{min-height:390px}.drop{width:min(64%,360px)}.philosophy-grid,.product-grid,.atelier-grid{grid-template-columns:1fr}.four{grid-template-columns:1fr 1fr}.atelier-copy{padding:70px 6vw}.atelier-image{min-height:520px}.atelier-image img{min-height:520px}.bespoke-card{grid-template-columns:1fr;padding:48px}.trust{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+@media(max-width:560px){.nav{padding:14px 18px}.brand{font-size:13px}.hero-inner{padding:116px 20px 78px}.hero h1{font-size:52px}.lead{font-size:26px}.sub{font-size:14px}.drop-wrap{min-height:320px}.drop{width:250px}.scroll{left:20px}.section{padding:78px 20px}.philosophy-grid{gap:32px}.four{grid-template-columns:1fr}.collection{min-height:310px}.product-grid{gap:40px}.product-shot,.product-shot img{min-height:410px}.meta{grid-template-columns:1fr}.atelier-image,.atelier-image img{min-height:390px}.atelier-copy{padding:65px 20px}.lifestyle{min-height:630px}.lifestyle-copy{padding:65px 20px}.bespoke-card{padding:38px 25px;border-radius:28px}.trust{grid-template-columns:1fr}.trust div{border-right:0;border-bottom:1px solid var(--line)}.trust div:last-child{border-bottom:0}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.footer-bottom{flex-direction:column}.toast{bottom:14px}.actions{align-items:stretch}.actions .btn{flex:1 1 auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.drop{animation:none}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#top" aria-label="LAGUNA ATELIER — на начало страницы">LAGUNA ATELIER</a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav">Меню</button>
+  <nav class="navlinks" id="mainnav" aria-label="Главная навигация">
+    <a href="#collections">Коллекции</a><a href="#atelier">Atelier</a><a href="#bespoke">На заказ</a><a href="#story">История</a><a class="cart" href="#" data-demo="Корзина">Корзина · 0</a>
+  </nav>
+</header>
+<main id="top">
+<section class="hero">
+  <div class="hero-inner">
+    <div class="reveal">
+      <div class="eyebrow">Glass · Wood · Light · Handcrafted</div>
+      <h1>LAGUNA<br>ATELIER</h1>
+      <div class="lead">Предметы, в которых остаётся свет.</div>
+      <p class="sub">Стекло, дерево и свет. Создано вручную для пространств, в которых хочется оставаться.</p>
+      <div class="actions"><a class="btn btn-light" href="#collections">Открыть коллекцию</a><a class="btn btn-ghost" href="#story">История Atelier</a></div>
+    </div>
+    <div class="drop-wrap reveal"><img class="drop" src="assets/drop.webp" alt="Фирменная стеклянная капля LAGUNA ATELIER"></div>
+  </div>
+  <a class="scroll" href="#story">Погрузиться ↓</a>
+</section>
+<section class="section philosophy" id="story">
+ <div class="wrap philosophy-grid">
+  <div class="reveal"><div class="kicker">Brand philosophy</div><h2 class="title">Свет,<br>заключённый<br>в форму.</h2></div>
+  <div class="reveal"><div class="philosophy-copy">Стекло ловит его. Дерево сохраняет тепло. Огонь заставляет его двигаться.</div><p class="philosophy-small">Мы соединяем материалы в предметах, которые не просто занимают место в интерьере — они меняют его свет, настроение и ощущение времени.</p><div class="essence"><span>Light</span><span>Form</span><span>Reflection</span><span>Matter</span></div></div>
+ </div>
+</section>
+<section class="section" id="collections">
+ <div class="wrap">
+  <div class="kicker reveal">Collections</div><h2 class="title reveal">Свет · Форма · Отражение · Материя</h2>
+  <div class="four">
+   <a class="collection reveal" href="#featured"><img src="assets/living.webp" alt="Свеча и стекло в вечернем интерьере"><div class="collection-body"><strong>Свет</strong><span>Свечи · подсвечники · объекты</span></div></a>
+   <a class="collection reveal" href="#featured"><img src="assets/closeup.webp" alt="Стекло и дерево крупным планом"><div class="collection-body"><strong>Форма</strong><span>Дерево · мебель · интерьер</span></div></a>
+   <a class="collection abstract2 reveal" href="#featured"><div class="collection-body"><strong>Отражение</strong><span>Зеркала · стекло · композиции</span></div></a>
+   <a class="collection abstract1 reveal" href="#featured"><div class="collection-body"><strong>Материя</strong><span>Текстиль · натуральные фактуры</span></div></a>
+  </div>
+ </div>
+</section>
+<section class="section feature" id="featured">
+ <div class="wrap product-grid">
+  <div class="product-shot reveal"><img src="assets/product.webp" alt="Стеклянный объект LUCE 01"></div>
+  <div class="reveal"><div class="kicker">Luce Collection · 01</div><h2 class="title">Luce 01</h2><p class="philosophy-copy" style="font-size:28px;color:var(--ink)">Стекло, которое меняется вместе со светом комнаты.</p><p>Ручная работа. Каждый объект отличается движением стекла, количеством пузырьков и рисунком преломления — двух совершенно одинаковых не существует.</p><div class="meta"><div>Материал<br><b>Стекло · ручная работа</b></div><div>Серия<br><b>One of a kind</b></div><div>Срок изготовления<br><b>Уточняется</b></div><div>Упаковка<br><b>Защитный gift-box</b></div></div><div class="price">Цена будет добавлена после формирования коллекции</div><a class="btn" style="background:var(--deep);color:white" href="#bespoke">Запросить информацию</a></div>
+ </div>
+</section>
+<section class="atelier" id="atelier">
+ <div class="atelier-grid">
+  <div class="atelier-image"><img src="assets/workshop.webp" alt="Руки мастера работают со стеклом и деревом"></div>
+  <div class="atelier-copy reveal"><div class="kicker">Inside the atelier</div><h2 class="title">Создано руками.<br>Не повторено машиной.</h2><div class="atelier-rule"></div><p>В LAGUNA ATELIER естественная неповторимость — часть характера предмета. Мы показываем материал честно: фактуру дерева, пузырьки в стекле, след инструмента и свет, который делает каждый объект живым.</p><div class="actions"><a class="btn btn-ghost" href="#story">Наша философия</a><a class="btn btn-ghost" href="#bespoke">Индивидуальный заказ</a></div></div>
+ </div>
+</section>
+<section class="lifestyle">
+ <img src="assets/living.webp" alt="Тёплый интерьер с камином и стеклянным подсвечником">
+ <div class="lifestyle-copy reveal"><div class="kicker" style="color:#d6dfdc">Objects in life</div><h2 class="title">Не просто предмет.<br>А атмосфера вокруг него.</h2><p style="max-width:680px;color:#d5dedb">Мы показываем изделия не только в каталоге, но и в живом пространстве — вечером у камина, утром у окна, рядом с деревом, камнем, тканью и настоящим светом.</p></div>
+</section>
+<section class="section bespoke" id="bespoke">
+ <div class="wrap bespoke-card reveal"><div><div class="kicker">Bespoke</div><h2 class="title" style="margin-bottom:10px">Создадим предмет<br>для вашего пространства.</h2><p style="max-width:650px">Размер, оттенок стекла, древесина, пропорции и характер света могут быть подобраны под интерьер. От первого разговора — к эскизу и готовому объекту.</p></div><a class="btn" style="background:var(--deep);color:white" href="#" data-demo="Заявка на индивидуальный заказ">Обсудить идею</a></div>
+</section>
+<div class="trust"><div><b>Создано вручную</b><br>С характером живого материала.</div><div><b>Натуральные материалы</b><br>Стекло, дерево, камень и ткань.</div><div><b>Надёжная упаковка</b><br>Продуманная для хрупких объектов.</div><div><b>Прозрачный заказ</b><br>Сроки, оплата и доставка без сюрпризов.</div></div>
+</main>
+<div class="toast" role="status" aria-live="polite"><b>Прототип</b><span></span></div>
+<footer>
+ <div class="footer-grid"><div><div class="footer-brand">LAGUNA ATELIER</div><p>Свет, заключённый в форму.</p></div><div><p><b>Навигация</b></p><p><a href="#collections">Коллекции</a></p><p><a href="#atelier">Atelier</a></p><p><a href="#bespoke">На заказ</a></p></div><div><p><b>Информация</b></p><p>Доставка и оплата</p><p>Уход за изделиями</p><p>Контакты</p></div></div>
+ <div class="footer-bottom"><span>© LAGUNA ATELIER · visual prototype</span><span>Из ночной лагуны — в тёплый дом.</span></div>
+</footer>
+<script>
+const menuBtn=document.querySelector('.menu-btn'),nav=document.querySelector('.navlinks');
+menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce){document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));}else{const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));}
+const toast=document.querySelector('.toast'),toastText=toast.querySelector('span');let toastTimer;document.querySelectorAll('[data-demo]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();toastText.textContent=el.dataset.demo+' будет подключена на этапе разработки магазина.';toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3200);}));
+</script>
+<script>
+const LAGUNA_ASSETS = {"assets/closeup.webp":["assetdata/closeup.0.txt","assetdata/closeup.1.txt","assetdata/closeup.2.txt","assetdata/closeup.3.txt"],"assets/drop.webp":["assetdata/drop.0.txt","assetdata/drop.1.txt","assetdata/drop.2.txt"],"assets/living.webp":["assetdata/living.0.txt","assetdata/living.1.txt","assetdata/living.2.txt"],"assets/product.webp":["assetdata/product.0.txt","assetdata/product.1.txt","assetdata/product.2.txt"],"assets/workshop.webp":["assetdata/workshop.0.txt","assetdata/workshop.1.txt","assetdata/workshop.2.txt"]};
+(async()=>{for(const img of document.querySelectorAll('img')){const src=img.getAttribute('src'),parts=LAGUNA_ASSETS[src];if(!parts)continue;try{const texts=await Promise.all(parts.map(p=>fetch(p,{cache:'force-cache'}).then(r=>{if(!r.ok)throw new Error(p);return r.text();})));img.src='data:image/webp;base64,'+texts.join('');}catch(e){console.error('LAGUNA asset load failed',src,e);}}})();
+</script>
+</body></html>

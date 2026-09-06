@@ -30,7 +30,7 @@ footer{background:#071516;color:#dbe2df;padding:70px 6vw 40px}.footer-grid{max-w
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .75s ease,transform .75s ease}.reveal.in{opacity:1;transform:none}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,24px);z-index:80;background:#f4f0e8;color:#172321;border:1px solid rgba(0,0,0,.12);border-radius:18px;padding:15px 18px;box-shadow:0 20px 50px rgba(0,0,0,.25);display:flex;gap:10px;opacity:0;pointer-events:none;transition:.25s;max-width:min(92vw,560px);font-size:13px}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:900px){.navlinks{display:none;position:absolute;top:64px;left:4vw;right:4vw;background:rgba(7,21,22,.97);padding:20px;border-radius:18px;flex-direction:column;align-items:flex-start;box-shadow:0 24px 60px rgba(0,0,0,.32)}.navlinks.open{display:flex}.menu-btn{display:block}.hero{min-height:auto}.hero-inner{grid-template-columns:1fr;padding-top:130px;padding-bottom:85px}.drop-wrap{min-height:390px}.drop{width:min(64%,360px)}.philosophy-grid,.product-grid,.atelier-grid{grid-template-columns:1fr}.four{grid-template-columns:1fr 1fr}.atelier-copy{padding:70px 6vw}.atelier-image{min-height:520px}.atelier-image img{min-height:520px}.bespoke-card{grid-template-columns:1fr;padding:48px}.trust{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
 @media(max-width:560px){.nav{padding:14px 18px}.brand{font-size:13px}.hero-inner{padding:116px 20px 78px}.hero h1{font-size:52px}.lead{font-size:26px}.sub{font-size:14px}.drop-wrap{min-height:320px}.drop{width:250px}.scroll{left:20px}.section{padding:78px 20px}.philosophy-grid{gap:32px}.four{grid-template-columns:1fr}.collection{min-height:310px}.product-grid{gap:40px}.product-shot,.product-shot img{min-height:410px}.meta{grid-template-columns:1fr}.atelier-image,.atelier-image img{min-height:390px}.atelier-copy{padding:65px 20px}.lifestyle{min-height:630px}.lifestyle-copy{padding:65px 20px}.bespoke-card{padding:38px 25px;border-radius:28px}.trust{grid-template-columns:1fr}.trust div{border-right:0;border-bottom:1px solid var(--line)}.trust div:last-child{border-bottom:0}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.footer-bottom{flex-direction:column}.toast{bottom:14px}.actions{align-items:stretch}.actions .btn{flex:1 1 auto}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.drop,.lagoon-light{animation:none}.drop-wrap{transform:none!important;transition:none}.reveal{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.drop{animation:none}.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -38,11 +38,12 @@ footer{background:#071516;color:#dbe2df;padding:70px 6vw 40px}.footer-grid{max-w
   <a class="brand" href="#top" aria-label="LAGUNA ATELIER — на начало страницы">LAGUNA ATELIER</a>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav">Меню</button>
   <nav class="navlinks" id="mainnav" aria-label="Главная навигация">
-    <a href="#collections">Коллекции</a><a href="#atelier">Atelier</a><a href="#bespoke">На заказ</a><a href="#story">История</a><a class="cart" href="#" data-demo="Корзина">Корзина · 0</a>
+    <a href="#collections">Коллекции</a><a href="#fiamma">FIAMMA 01</a><a href="#atelier">Atelier</a><a href="#bespoke">На заказ</a><a href="#story">История</a><a class="cart" href="#" data-demo="Корзина">Корзина · 0</a>
   </nav>
 </header>
 <main id="top">
-<section class="hero"><div class="lagoon-light" aria-hidden="true"></div><div class="lagoon-ripple" aria-hidden="true"></div>
+<section class="hero">
+ <div class="lagoon-light"></div><div class="lagoon-ripple"></div>
   <div class="hero-inner">
     <div class="reveal">
       <div class="eyebrow">Glass · Wood · Light · Handcrafted</div>
@@ -55,15 +56,9 @@ footer{background:#071516;color:#dbe2df;padding:70px 6vw 40px}.footer-grid{max-w
   </div>
   <a class="scroll" href="#story">Погрузиться ↓</a>
 </section>
-<section class="section philosophy" id="story">
- <div class="wrap philosophy-grid">
-  <div class="reveal"><div class="kicker">Brand philosophy</div><h2 class="title">Свет и любовь,<br>заключённые<br>в форму.</h2></div>
-  <div class="reveal"><div class="philosophy-copy">Стекло ловит его. Дерево сохраняет тепло. Огонь заставляет его двигаться.</div><p class="philosophy-small">Мы соединяем материалы в предметах, которые не просто занимают место в интерьере — они меняют его свет, настроение и ощущение времени.</p><div class="essence"><span>Light</span><span>Form</span><span>Reflection</span><span>Matter</span></div></div>
- </div>
-</section>
+<section class="section philosophy" id="story"><div class="wrap philosophy-grid"><div class="reveal"><div class="kicker">Brand philosophy</div><h2 class="title">Свет и любовь,<br>заключённые в форму.</h2></div><div class="reveal"><div class="philosophy-copy">Стекло ловит его. Дерево сохраняет тепло. Огонь заставляет его двигаться.</div><p class="philosophy-small">Мы соединяем эти материалы в предметах, которые не просто занимают место в интерьере — они меняют его свет, настроение и ощущение времени.</p><div class="essence"><span>Свет</span><span>·</span><span>Форма</span><span>·</span><span>Отражение</span><span>·</span><span>Материя</span></div></div></div></section>
 <section class="section" id="collections">
- <div class="wrap">
-  <div class="kicker reveal">Collections</div><h2 class="title reveal">Свет · Отражение · Форма · Материя</h2>
+ <div class="wrap"><div class="kicker reveal">Core collections</div><h2 class="title reveal">Четыре состояния<br>одного мира.</h2><p class="reveal" style="max-width:650px;color:#66716d">Не категории каталога, а способы почувствовать материал: через огонь, отражение, форму и прикосновение.</p>
   <div class="four">
    <a class="collection reveal" href="svet.html"><img src="living.webp" alt="Свеча и стекло в вечернем интерьере"><div class="collection-body"><strong>Свет</strong><span>Свечи · подсвечники · объекты</span></div></a>
    <a class="collection abstract2 reveal" href="#featured"><div class="collection-body"><strong>Отражение</strong><span>Зеркала · стекло · композиции</span></div></a>
@@ -72,10 +67,22 @@ footer{background:#071516;color:#dbe2df;padding:70px 6vw 40px}.footer-grid{max-w
   </div>
  </div>
 </section>
-<section class="section feature" id="featured">
- <div class="wrap product-grid">
+<section class="section feature" id="featured"><div class="wrap product-grid">
   <div class="product-shot reveal"><img src="product.webp" alt="Стеклянный объект LUCE 01"></div>
-  <div class="reveal"><div class="kicker">Luce Collection · 01</div><h2 class="title">Luce 01</h2><p class="philosophy-copy" style="font-size:28px;color:var(--ink)">Стекло, которое меняется вместе со светом комнаты.</p><p>Ручная работа. Каждый объект отличается движением стекла, количеством пузырьков и рисунком преломления — двух совершенно одинаковых не существует.</p><div class="meta"><div>Материал<br><b>Стекло · ручная работа</b></div><div>Серия<br><b>One of a kind</b></div><div>Срок изготовления<br><b>Уточняется</b></div><div>Упаковка<br><b>Защитный gift-box</b></div></div><div class="price">Цена будет добавлена после формирования коллекции</div><a class="btn" style="background:var(--deep);color:white" href="luce-01.html">Открыть объект</a></div>
+  <div class="reveal"><div class="kicker">First object · Luce 01</div><h2 class="title">LUCE 01</h2><p style="font-family:var(--serif);font-size:28px;line-height:1.35">Стекло, которое меняется вместе со светом комнаты.</p><div class="price">Цена появится после финализации образца</div><div class="meta"><div>Ручная работа</div><div>Стекло · естественные пузырьки</div><div>Каждый экземпляр немного отличается</div><div>Срок изготовления — после утверждения образца</div></div><div class="actions"><a class="btn btn-light" href="luce-01.html">Подробнее</a><a class="btn" style="border-color:var(--line)" href="svet.html">Коллекция «Свет»</a></div></div>
+ </div></section>
+<section class="section feature" id="fiamma">
+ <div class="wrap product-grid">
+  <div class="product-shot reveal"><img src="living.webp" alt="FIAMMA 01 — свеча в ручном стекле LAGUNA ATELIER"></div>
+  <div class="reveal">
+   <div class="kicker">Candle object · Fiamma Collection</div>
+   <h2 class="title">FIAMMA 01</h2>
+   <p style="font-family:var(--serif);font-size:28px;line-height:1.35">Огонь внутри стекла. Тихий предмет для вечера, который меняет свет вокруг себя.</p>
+   <div class="price">14 900 ₽</div>
+   <div class="meta"><div>Ручное стекло цвета морской глубины</div><div>Натуральный растительный воск</div><div>Деревянный фитиль · мягкое потрескивание</div><div>Ориентировочно 55–60 часов горения</div></div>
+   <p style="color:#59645f;max-width:560px">FIAMMA 01 задумана как свеча-объект: после того как воск закончится, стеклянная форма остаётся в интерьере как подсвечник или самостоятельный предмет. Небольшие различия в пузырьках и оттенке — часть ручной работы.</p>
+   <div class="actions"><a class="btn btn-light" style="background:var(--deep);color:white" href="fiamma-01.html">Открыть FIAMMA 01</a><a class="btn" style="border-color:rgba(24,34,32,.25)" href="svet.html">Коллекция «Свет»</a></div>
+  </div>
  </div>
 </section>
 <section class="atelier" id="atelier">
@@ -88,27 +95,17 @@ footer{background:#071516;color:#dbe2df;padding:70px 6vw 40px}.footer-grid{max-w
  <img src="living.webp" alt="Тёплый интерьер с камином и стеклянным подсвечником">
  <div class="lifestyle-copy reveal"><div class="kicker" style="color:#d6dfdc">Objects in life</div><h2 class="title">Не просто предмет.<br>А атмосфера вокруг него.</h2><p style="max-width:680px;color:#d5dedb">Мы показываем изделия не только в каталоге, но и в живом пространстве — вечером у камина, утром у окна, рядом с деревом, камнем, тканью и настоящим светом.</p></div>
 </section>
-<section class="section bespoke" id="bespoke">
- <div class="wrap bespoke-card reveal"><div><div class="kicker">Bespoke</div><h2 class="title" style="margin-bottom:10px">Создадим предмет<br>для вашего пространства.</h2><p style="max-width:650px">Размер, оттенок стекла, древесина, пропорции и характер света могут быть подобраны под интерьер. От первого разговора — к эскизу и готовому объекту.</p></div><a class="btn" style="background:var(--deep);color:white" href="#" data-demo="Заявка на индивидуальный заказ">Обсудить идею</a></div>
-</section>
-<div class="trust"><div><b>Создано вручную — с любовью</b><br>С характером живого материала.</div><div><b>Натуральные материалы</b><br>Стекло, дерево, камень и ткань.</div><div><b>Безопасная оплата</b><br>Понятный и защищённый процесс заказа.</div><div><b>Надёжная упаковка</b><br>Продуманная для хрупких объектов.</div></div>
+<section class="section bespoke" id="bespoke"><div class="wrap"><div class="bespoke-card reveal"><div><div class="kicker">Bespoke</div><h2 class="title">Создадим предмет<br>для вашего пространства.</h2><p style="max-width:650px;color:#59645f">Размер, оттенок стекла, порода дерева, характер поверхности и свет — отправная точка для совместной работы.</p></div><a class="btn" style="background:#102829;color:white" href="#" data-demo="Индивидуальный заказ">Обсудить проект</a></div></div></section>
+<section class="trust"><div>Создано вручную — с любовью</div><div>Натуральные материалы</div><div>Безопасная оплата</div><div>Надёжная упаковка</div></section>
 </main>
-<div class="toast" role="status" aria-live="polite"><b>Прототип</b><span></span></div>
-<footer>
- <div class="footer-grid"><div><div class="footer-brand">LAGUNA ATELIER</div><p>Свет и любовь, заключённые в форму.</p></div><div><p><b>Навигация</b></p><p><a href="#collections">Коллекции</a></p><p><a href="#atelier">Atelier</a></p><p><a href="#bespoke">На заказ</a></p></div><div><p><b>Информация</b></p><p>Доставка и оплата</p><p>Уход за изделиями</p><p>Контакты</p></div></div>
- <div class="footer-bottom"><span>© LAGUNA ATELIER · visual prototype</span><span>Из ночной лагуны — в тёплый дом.</span></div>
-</footer>
+<footer><div class="footer-grid"><div><div class="footer-brand">LAGUNA ATELIER</div><p>Свет и любовь, заключённые в форму.</p></div><div><p><b>Навигация</b></p><p><a href="#collections">Коллекции</a></p><p><a href="#atelier">Atelier</a></p><p><a href="#bespoke">На заказ</a></p></div><div><p><b>Информация</b></p><p>Доставка и оплата</p><p>Уход за изделиями</p><p>Контакты</p></div></div><div class="footer-bottom"><span>Из ночной лагуны — в тёплый дом.</span><span>© LAGUNA ATELIER · DEMO</span></div></footer>
+<div class="toast" role="status" aria-live="polite"><span>✦</span><span id="toastText">Раздел появится в следующей версии.</span></div>
 <script>
-const menuBtn=document.querySelector('.menu-btn'),nav=document.querySelector('.navlinks'),topNav=document.querySelector('.nav');
-menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
-const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(reduce){document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));}else{const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));}
-const hero=document.querySelector('.hero'),dropWrap=document.querySelector('.drop-wrap');
-let ticking=false;
-function applyScroll(){const y=window.scrollY||0;topNav.classList.toggle('scrolled',y>38);if(!reduce&&hero&&dropWrap){const h=hero.offsetHeight||1;const p=Math.max(0,Math.min(1,y/h));dropWrap.style.setProperty('--drop-scroll',`${Math.round(p*34)}px`);}ticking=false;}
-window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(applyScroll);ticking=true;}},{passive:true});applyScroll();
-if(!reduce&&dropWrap&&window.matchMedia('(pointer:fine)').matches){dropWrap.addEventListener('pointermove',e=>{const r=dropWrap.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;dropWrap.style.setProperty('--drop-ry',`${x*5}deg`);dropWrap.style.setProperty('--drop-rx',`${-y*4}deg`);});dropWrap.addEventListener('pointerleave',()=>{dropWrap.style.setProperty('--drop-ry','0deg');dropWrap.style.setProperty('--drop-rx','0deg');});}
-const toast=document.querySelector('.toast'),toastText=toast.querySelector('span');let toastTimer;document.querySelectorAll('[data-demo]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();toastText.textContent=el.dataset.demo+' будет подключена на этапе разработки магазина.';toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3200);}));
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(reduce){document.querySelectorAll('.reveal').forEach(x=>x.classList.add('in'))}else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));}
+const menu=document.querySelector('.menu-btn'), nav=document.querySelector('.navlinks');menu.addEventListener('click',()=>{const o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+const toast=document.querySelector('.toast'),tt=document.getElementById('toastText');document.querySelectorAll('[data-demo]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();tt.textContent=el.dataset.demo+' — будет подключено в рабочей версии магазина.';toast.classList.add('show');clearTimeout(window._t);window._t=setTimeout(()=>toast.classList.remove('show'),2800)}));
+const header=document.querySelector('.nav'), dw=document.querySelector('.drop-wrap');function onScroll(){header.classList.toggle('scrolled',scrollY>36);if(!reduce&&dw){dw.style.setProperty('--drop-scroll',Math.min(scrollY*.055,16)+'px')}}addEventListener('scroll',onScroll,{passive:true});onScroll();
+if(!reduce&&dw&&matchMedia('(pointer:fine)').matches){dw.addEventListener('pointermove',e=>{const r=dw.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;dw.style.setProperty('--drop-ry',(x*5)+'deg');dw.style.setProperty('--drop-rx',(-y*3.5)+'deg')});dw.addEventListener('pointerleave',()=>{dw.style.setProperty('--drop-rx','0deg');dw.style.setProperty('--drop-ry','0deg')})}
 </script>
 </body></html>

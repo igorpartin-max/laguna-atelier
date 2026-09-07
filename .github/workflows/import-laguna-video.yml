@@ -1,0 +1,30 @@
+name: Import LAGUNA droplet video
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-laguna-video.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-video:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download approved droplet loop
+        run: |
+          curl -L --fail --retry 3 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/8ae09772-54bb-40ce-a002-bf2cb2bf583c.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMmNiMjBkOGZlMTFhYzkxNyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4ODkxMjc4M30.YeNjeRJ2hvMKRNfw25bqeDjKUPYoE4F9wVXyH5Guolc' -o laguna-drop-live.mp4
+          test -s laguna-drop-live.mp4
+
+      - name: Commit video to repository
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add laguna-drop-live.mp4
+          git diff --cached --quiet && exit 0
+          git commit -m 'Add approved live LAGUNA droplet video'
+          git push

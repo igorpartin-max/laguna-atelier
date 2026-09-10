@@ -1,0 +1,48 @@
+name: Fix LAGUNA hero video blend
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-hero-video.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix-hero:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Blend hero video into lagoon background
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('index.html')
+          s = path.read_text(encoding='utf-8')
+
+          new_drop = r'''.drop-stage{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;transform:translate3d(0,var(--drop-scroll,0px),0);will-change:transform}.drop-video-shell{position:relative;width:min(90%,450px);display:flex;align-items:center;justify-content:center;isolation:isolate}.drop-video-shell:before{content:"";position:absolute;z-index:-1;width:88%;height:88%;border-radius:50%;background:radial-gradient(circle,rgba(126,211,195,.18) 0,rgba(111,154,145,.10) 38%,rgba(183,139,89,.05) 55%,transparent 72%);filter:blur(34px);animation:auraBreath 7s ease-in-out infinite}.drop-video-shell:after{content:"";position:absolute;z-index:2;inset:3%;pointer-events:none;background:radial-gradient(ellipse 45% 68% at 50% 50%,transparent 0 60%,rgba(7,21,22,.08) 67%,rgba(7,21,22,.45) 80%,#071516 100%);filter:blur(2px)}.drop-video{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;mix-blend-mode:screen;opacity:.93;filter:saturate(1.04) brightness(.90) contrast(1.08) drop-shadow(0 26px 40px rgba(0,0,0,.28));-webkit-mask-image:radial-gradient(ellipse 44% 67% at 50% 50%,#000 0 52%,rgba(0,0,0,.96) 60%,rgba(0,0,0,.58) 69%,transparent 82%);mask-image:radial-gradient(ellipse 44% 67% at 50% 50%,#000 0 52%,rgba(0,0,0,.96) 60%,rgba(0,0,0,.58) 69%,transparent 82%)}'''
+
+          pattern = r'\.drop-stage\{.*?\}\n\.section\{padding:'
+          s, n = re.subn(pattern, new_drop + '\n.section{padding:', s, count=1, flags=re.S)
+          if n != 1:
+              raise SystemExit('Hero drop CSS block was not found exactly once')
+
+          s = s.replace('<div class="star-dust" aria-hidden="true"></div>', '')
+          s = s.replace('.drop-stage{min-height:420px}.drop-video-shell{width:min(82%,430px)}', '.drop-stage{min-height:390px}.drop-video-shell{width:min(76%,380px)}')
+          s = s.replace('.drop-stage{min-height:350px}.drop-video-shell{width:290px}', '.drop-stage{min-height:315px}.drop-video-shell{width:250px}')
+
+          path.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Commit visual fix
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m 'Blend live droplet into lagoon hero'
+          git push

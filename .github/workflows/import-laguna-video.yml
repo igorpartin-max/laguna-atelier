@@ -1,4 +1,4 @@
-name: Import LAGUNA droplet video
+name: Finalize LAGUNA droplet source
 
 on:
   push:
@@ -9,22 +9,32 @@ permissions:
   contents: write
 
 jobs:
-  import-video:
+  finalize-drop:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Download approved droplet loop
+      - name: Point hero video to repository asset
         run: |
-          curl -L --fail --retry 3 'https://d2jqrm6oza8nb6.cloudfront.net/datasets/8ae09772-54bb-40ce-a002-bf2cb2bf583c.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMmNiMjBkOGZlMTFhYzkxNyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4ODkxMjc4M30.YeNjeRJ2hvMKRNfw25bqeDjKUPYoE4F9wVXyH5Guolc' -o laguna-drop-live.mp4
-          test -s laguna-drop-live.mp4
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          pattern = r'<source src="https://d2jqrm6oza8nb6\.cloudfront\.net/datasets/[^"]+\.mp4\?_jwt=[^"]+" type="video/mp4">'
+          replacement = '<source src="laguna-drop-live.mp4" type="video/mp4">'
+          s2, n = re.subn(pattern, replacement, s, count=1)
+          if n != 1:
+              raise SystemExit(f'Expected one temporary droplet source, found {n}')
+          p.write_text(s2, encoding='utf-8')
+          PY
 
-      - name: Commit video to repository
+      - name: Commit finalized hero source
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add laguna-drop-live.mp4
+          git add index.html
           git diff --cached --quiet && exit 0
-          git commit -m 'Add approved live LAGUNA droplet video'
+          git commit -m 'Use repository-hosted live droplet in hero'
           git push

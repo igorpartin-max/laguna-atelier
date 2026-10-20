@@ -1,7 +1,12 @@
 [build]
-  publish = "."
+  publish = "dist"
+  command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "20"
 
 # redeploy trigger 2026-09-08
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

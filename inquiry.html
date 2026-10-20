@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071516">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Ваша заявка — LAGUNA ATELIER</title>
+  <link rel="stylesheet" href="assets/inquiry.css">
+  <script type="module" src="assets/inquiry.mjs"></script>
+</head>
+<body>
+  <header class="nav"><a class="brand" href="index.html">LAGUNA ATELIER</a><a href="index.html#collections">Вернуться к коллекциям ↗</a></header>
+  <main class="wrap">
+    <div class="intro"><p class="kicker">Atelier · Ваш выбор</p><h1>От впечатления<br>к вашей истории.</h1><p>Соберите предметы или расскажите об идее. Наличие, детали, стоимость доставки и сроки согласуем до подтверждения заказа.</p></div>
+    <noscript><p class="notice">Для подготовки заявки включите JavaScript. Без него форма не отправляется.</p></noscript>
+    <p id="channel" class="notice" role="status">Проверяем возможность отправки. Пока ничего не отправлено.</p>
+    <p id="storage-note" class="notice" hidden></p>
+    <form id="inquiry-form" novalidate hidden>
+      <fieldset class="mode-switch"><legend>Какую историю создадим?</legend><label><input type="radio" name="mode" value="products" checked> Предметы из коллекции</label><label><input type="radio" name="mode" value="custom"> Индивидуальный заказ</label></fieldset>
+      <div class="layout">
+        <section class="panel" aria-labelledby="selection-title">
+          <p class="kicker">01 · Выбор</p><h2 id="selection-title">Ваша подборка</h2>
+          <div id="products-panel">
+            <div class="add-row"><label for="product">Добавить предмет<select id="product"></select></label><button type="button" id="add-product" class="secondary">Добавить</button></div>
+            <div id="cart"></div>
+            <p id="total" class="total"></p><p class="muted">Цены предварительные. Упаковка — отдельный товар. Наличие и доставка требуют подтверждения.</p>
+          </div>
+          <div id="custom-panel" hidden><p class="muted">Форма, цвет, настроение, повод — опишите то, что важно именно вам, в комментарии.</p><label for="quantity">Количество предметов<input id="quantity" name="quantity" type="number" min="1" max="99" step="1" value="1" inputmode="numeric" aria-describedby="error-quantity"></label><small id="error-quantity" class="field-error"></small><p class="muted">Стоимость рассчитывается после обсуждения идеи.</p></div>
+          <p id="error-items" class="field-error"></p>
+        </section>
+        <section class="panel" aria-labelledby="contact-title">
+          <p class="kicker">02 · Знакомство</p><h2 id="contact-title">Как к вам обратиться?</h2>
+          <label for="name">Ваше имя *<input id="name" name="name" autocomplete="name" maxlength="100" required aria-describedby="error-name"></label><small id="error-name" class="field-error"></small>
+          <p id="contact-hint" class="muted">Для ответа достаточно email или телефона. Можно указать оба.</p>
+          <label for="email">Email<input id="email" name="email" type="email" autocomplete="email" maxlength="254" aria-describedby="contact-hint error-email error-contact"></label><small id="error-email" class="field-error"></small>
+          <label for="phone">Телефон<input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+7 …" aria-describedby="contact-hint error-phone error-contact"></label><small id="error-phone" class="field-error"></small><small id="error-contact" class="field-error"></small>
+          <label for="comment" id="comment-label">Комментарий<textarea id="comment" name="comment" rows="4" maxlength="2000" aria-describedby="error-comment" placeholder="Пожелания, город доставки, текст на подарочной карточке…"></textarea></label><small id="error-comment" class="field-error"></small>
+          <label class="consent"><input id="consent" name="consent" type="checkbox" required aria-describedby="error-consent"><span>Разрешаю передать указанные контакты и комментарий в LAGUNA ATELIER для ответа на эту заявку.</span></label><small id="error-consent" class="field-error"></small>
+          <p class="muted privacy">Контакты не сохраняются в браузере после закрытия страницы. В корзине сохраняется только список товаров.</p>
+        </section>
+      </div>
+      <p id="errors" class="notice error" role="alert" tabindex="-1" hidden></p>
+      <div class="submit-row"><button id="review" type="submit">Проверить заявку</button><span class="muted">Без онлайн-оплаты. Сначала — проверка деталей.</span></div>
+    </form>
+    <section id="review-panel" class="panel review-panel" aria-labelledby="review-title" hidden tabindex="-1">
+      <p class="kicker">03 · Детали</p><h2 id="review-title">Проверьте заявку</h2><pre id="summary"></pre>
+      <p id="result" class="notice" role="status" aria-live="polite"></p>
+      <div class="review-actions"><button type="button" id="send" hidden>Отправить заявку</button><button type="button" id="download" class="secondary">Скачать заявку (.txt)</button><button type="button" id="edit" class="secondary">Изменить</button></div>
+    </section>
+    <footer><span class="brand">LAGUNA ATELIER</span><p>Свет и любовь, заключённые в форму.</p></footer>
+  </main>
+</body>
+</html>

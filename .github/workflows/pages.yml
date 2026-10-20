@@ -29,10 +29,17 @@ jobs:
         with:
           enablement: true
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Test and prepare public site
+        run: npm test && npm run build
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: 'dist'
 
       - name: Deploy Pages
         id: deployment
